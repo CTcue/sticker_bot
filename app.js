@@ -1,8 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var bot = require('./bot');
 
-console.log("BOT IS AAN.bat");
+var bot = require('./bot');
 
 var app = express();
 app.set('port', (process.env.PORT || 5000));
