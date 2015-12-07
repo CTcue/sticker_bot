@@ -8,19 +8,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.post("/", function (req, res, next) {
-    var userName = req.body.user_name || "you";
-    var payload = {
-      text : "Hello, " + userName + "!"
-    };
-
-    // avoid infinite loop
-    if (userName !== "slackbot") {
+    if (process.env.NODE_ENV === req.body.token && req.body.user_name !== "slackbot") {
         var payload = {
             "text": "http://currencybot.github.io/CurrencyBot.png"
         };
 
-        res.send(JSON.stringify(payload));
-        res.end();
+        return res.send(JSON.stringify(payload)).end();
     }
     else {
         return res.status(200).end();
