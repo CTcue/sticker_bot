@@ -13,16 +13,8 @@ var app = express();
 var Slack = require('node-slack');
 var slack = new Slack(process.env.WEBHOOK, {});
 
-var images = require("./image_mapping").images;
+var images = require("./stickers/__mapping__").images;
 var emoji = ["pig", "rabbit", "frog", "cow", "octopus", "cat", "cat2", "rooster"];
-
-
-
-// // Set up "keyword/sticker" search
-// var Triejs = require('triejs');
-// var trie = new Triejs();
-//     trie.add("nice", "nice.png")
-//     trie.add("cool", "nice.png")
 
 
 function calcScore(obj, str) {
@@ -61,10 +53,6 @@ function calcScore(obj, str) {
 
     return score;
 }
-
-app.get("/", function(req, res, next) {
-  return res.status(200).json(images);
-})
 
 app.post("/images", function (req, res, next) {
     if (req.body.user_name !== "slackbot" && req.body.text && req.body.text.length > 1) {

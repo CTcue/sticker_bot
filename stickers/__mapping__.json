@@ -25,8 +25,14 @@
       },
 
       {
+        "subject" : "mike",
+        "img"     : ["mike1.png"],
+        "tags"    : ["oeps", "wat"]
+      },
+
+      {
         "subject" : "roel",
-        "img"     : ["roel_happy.webp"],
+        "img"     : ["roel_happy.png"],
         "tags"    : ["blij", "happy", "success", "succes", "yes", "yes!", "yesss", "het werkt", "lekker werken"]
       }
   ]
