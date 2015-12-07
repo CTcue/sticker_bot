@@ -7,13 +7,13 @@ app.set("port", (process.env.PORT || 5000));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-app.post("/", function (req, res, next) {
+app.post("/images", function (req, res, next) {
     if (req.body.user_name !== "slackbot") {
         var payload = {
-            "text": "http://currencybot.github.io/CurrencyBot.png"
+            "text": "https://raw.githubusercontent.com/CTcue/sticker_bot/master/stickers/nice.png"
         };
 
-        return res.send(JSON.stringify(payload)).end();
+        return res.status(200).json(payload);
     }
     else {
         return res.status(200).end();
