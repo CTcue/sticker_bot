@@ -1,0 +1,15 @@
+{
+  "name": "sticker_bot",
+  "version": "0.0.0",
+  "description": "Telegram-like sticker packs for slack",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fabiën",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3"
+  }
+}
