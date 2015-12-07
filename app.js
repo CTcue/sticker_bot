@@ -1,28 +1,98 @@
+"use strict";
+
+var _ = require("lodash");
+var levenshtein = require('fast-levenshtein');
+
 var express = require("express");
 var bodyParser = require("body-parser");
+var app = express();
+    app.set("port", (process.env.PORT || 5000));
+    app.set("base", "https://raw.githubusercontent.com/CTcue/sticker_bot/master/stickers/");
+    app.use(bodyParser.urlencoded({ extended: true }));
 
 var Slack = require('node-slack');
 var slack = new Slack(process.env.WEBHOOK, {});
-var app = express();
 
-app.set("port", (process.env.PORT || 5000));
-app.use(bodyParser.urlencoded({ extended: true }));
+var images = require("./image_mapping").images;
+var emoji = ["pig", "rabbit", "frog", "cow", "octopus", "cat", "cat2", "rooster"];
 
+
+
+// // Set up "keyword/sticker" search
+// var Triejs = require('triejs');
+// var trie = new Triejs();
+//     trie.add("nice", "nice.png")
+//     trie.add("cool", "nice.png")
+
+
+function calcScore(obj, str) {
+    var split = str.split(" ");
+    var score = 0;
+
+    // Get basic score if str is in obj.tags
+    if (obj.tags.join(" ").indexOf(str) >= 0) {
+        score += 1.5;
+    }
+
+    for (var i=0; i<obj.tags.length; i++) {
+        for (var j=0; j<split.length; j++) {
+            if (obj.tags[i] === split[j]) {
+                score += 3;
+            }
+            // Small spelling error still get some score
+            else {
+                var dist = levenshtein.get(obj.tags[i], split[j]);
+                if (dist < 3) {
+                    score += 1.5;
+                }
+
+                // Sub string match
+                if (obj.tags[i].indexOf(split[j]) >= 0) {
+                    score += .75;
+                }
+            }
+        }
+    }
+
+    // Check if "param" contains the subject
+    if (_.has(obj, "subject") && obj.subject && str.indexOf(obj.subject) >= 0) {
+        score *= 2;
+    }
+
+    return score;
+}
+
+app.get("/", function(req, res, next) {
+  return res.status(200).json(images);
+})
 
 app.post("/images", function (req, res, next) {
-    if (req.body.user_name !== "slackbot") {
-        slack.send({
-            text: "https://raw.githubusercontent.com/CTcue/sticker_bot/master/stickers/nice.png",
-            channel: '#' + req.body.channel_name,
-            username: 'Sticker',
-            icon_emoji: ':octopus:'
-        });
+    if (req.body.user_name !== "slackbot" && req.body.text && req.body.text.length > 1) {
 
-        return res.status(200); //.json(payload);
+        var matches = [];
+        for (var i=0; i<images.length; i++) {
+            matches.push({
+              "index": i,
+              "score": calcScore(images[i], req.body.text.trim().toLowerCase())
+            });
+        }
+
+        // Sort by score and select "best" match
+        var best_match = _.sortBy(matches, "score").pop();
+
+        if (best_match.score > 0) {
+            slack.send({
+                text: app.get("base") + _.sample(images[best_match.index].img),
+                channel: '#' + (req.body.channel_name || "random"),
+                username: 'Sticker',
+                icon_emoji: ':' + _.sample(emoji) + ':'
+            });
+
+            // return res.status(200).json(_.sample(images[best_match.index].img));
+        }
     }
-    else {
-        return res.status(200).end();
-    }
+
+    return res.status(200).end();
 });
 
 
