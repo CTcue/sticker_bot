@@ -1,2 +1,2 @@
-# sticker_bot
+# Sticker bot
 Sticker pack support for slack

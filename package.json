@@ -4,12 +4,16 @@
   "description": "Telegram-like sticker packs for slack",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start" : "node app.js",
+    "test"  : "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "0.12.7"
   },
   "author": "Fabiën",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.14.1",
-    "express": "^4.13.3"
+    "express": "4.13.3"
   }
 }
