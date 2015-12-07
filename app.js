@@ -1,16 +1,12 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
-var bot = require('./bot');
-
 var app = express();
+
 app.set('port', (process.env.PORT || 5000));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', function (req, res) {
-  res.status(200).send('Hello.')
-});
-
+var bot = require('./bot');
 app.post('/hello', bot);
 
 // error handler
