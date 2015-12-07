@@ -67,16 +67,16 @@ app.post("/images", function (req, res, next) {
 
         // Sort by score and select "best" match
         var best_match = _.sortBy(matches, "score").pop();
+        var best_image = images[best_match.index];
 
         if (best_match.score > 0) {
             slack.send({
-                text: app.get("base") + _.sample(images[best_match.index].img),
+                text: app.get("base") + _.sample(best_image.img) + "\n" + _.sample(best_image.tags),
                 channel: '#' + (req.body.channel_name || "random"),
                 username: 'Sticker',
-                icon_emoji: ':' + _.sample(emoji) + ':'
+                icon_emoji: ':' + _.sample(emoji) + ':',
+                unfurl_links: true
             });
-
-            // return res.status(200).json(_.sample(images[best_match.index].img));
         }
     }
 
