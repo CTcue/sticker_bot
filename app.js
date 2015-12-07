@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.post("/", function (req, res, next) {
-    if (process.env.NODE_ENV === req.body.token && req.body.user_name !== "slackbot") {
+    if (req.body.user_name !== "slackbot") {
         var payload = {
             "text": "http://currencybot.github.io/CurrencyBot.png"
         };
