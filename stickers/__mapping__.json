@@ -13,6 +13,12 @@
       },
 
       {
+        "subject" : "lydia",
+        "img"     : ["lydia regenboog.jpg"],
+        "tags"    : ["regenboog", "handstand", "creatief doen"]
+      },
+
+      {
         "subject" : "fabien",
         "img"     : ["grondje_liggen.jpg"],
         "tags"    : ["code stuk", "brak", "niets lukt", "het gaat slecht", "grond liggen"]
