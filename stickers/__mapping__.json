@@ -8,7 +8,7 @@
 
       {
         "subject" : false,
-        "img"     : ["sad.png"],
+        "img"     : ["sad.png", "jochem-1.png"],
         "tags"    : ["sad", "tear", "medium-huilen"]
       },
 
@@ -26,20 +26,32 @@
 
       {
         "subject" : "mike",
-        "img"     : ["mike1.png"],
-        "tags"    : ["oeps", "wat"]
+        "img"     : ["mike1.png", "mike-1.png"],
+        "tags"    : ["oeps", "wat", "verbaasd", "het werkte gister nog"]
+      },
+
+      {
+        "subject" : "mike",
+        "img"     : ["mike-stash.png"],
+        "tags"    : ["nee gast", "not amused", "snor", "stash"]
+      },
+
+      {
+        "subject" : "mike",
+        "img"     : ["rippie.png"],
+        "tags"    : ["rippie", "rip", "ik ben ziek", "ik ben wat later", "ik ben er vandaag niet"]
       },
 
       {
         "subject": "jochem",
-        "img": ["jochem.png"],
+        "img": ["jochem-2.png"],
         "tags": ["lekker hoor", "zonnebril", "smile"]
       },
 
       {
         "subject" : "roel",
-        "img"     : ["roel_happy.png"],
-        "tags"    : ["blij", "happy", "success", "succes", "yes", "yes!", "yesss", "het werkt", "lekker werken"]
+        "img"     : ["roel_happy.png", "roel-1.png"],
+        "tags"    : ["blij", "happy", "success", "succes", "yes", "yes!", "het werkt", "lekker werken"]
       },
 
       {
