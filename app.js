@@ -1,14 +1,14 @@
 "use strict";
 
 var _ = require("lodash");
-var levenshtein = require('fast-levenshtein');
-
 var express = require("express");
 var bodyParser = require("body-parser");
 var app = express();
-    app.set("port", (process.env.PORT || 5000));
-    app.set("base", "https://raw.githubusercontent.com/CTcue/sticker_bot/master/stickers/");
-    app.use(bodyParser.urlencoded({ extended: true }));
+
+app.set("port", (process.env.PORT || 5000));
+app.set("base", "https://desolate-citadel-3922.herokuapp.com/img/");
+app.use('/img', express.static('stickers'));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 var Slack = require('node-slack');
 var slack = new Slack(process.env.WEBHOOK, {});
@@ -16,6 +16,7 @@ var slack = new Slack(process.env.WEBHOOK, {});
 var images = require("./stickers/__mapping__").images;
 var emoji = ["pig", "rabbit", "frog", "cow", "octopus", "cat", "cat2", "rooster"];
 
+var levenshtein = require('fast-levenshtein');
 
 function calcScore(obj, str) {
     var split = str.split(" ");
