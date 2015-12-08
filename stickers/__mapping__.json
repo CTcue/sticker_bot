@@ -34,6 +34,12 @@
         "subject" : "roel",
         "img"     : ["roel_happy.png"],
         "tags"    : ["blij", "happy", "success", "succes", "yes", "yes!", "yesss", "het werkt", "lekker werken"]
+      },
+
+      {
+        "subject": false,
+        "img": ["KZquOZM.gif"],
+        "tags": ["slecht idee", "goed idee kappa"]
       }
   ]
 }
