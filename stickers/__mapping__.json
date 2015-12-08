@@ -31,6 +31,12 @@
       },
 
       {
+        "subject": "jochem",
+        "img": ["jochem.png"],
+        "tags": ["lekker hoor", "zonnebril", "smile"]
+      },
+
+      {
         "subject" : "roel",
         "img"     : ["roel_happy.png"],
         "tags"    : ["blij", "happy", "success", "succes", "yes", "yes!", "yesss", "het werkt", "lekker werken"]
