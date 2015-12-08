@@ -70,9 +70,16 @@ app.post("/images", function (req, res, next) {
         var best_match = _.sortBy(matches, "score").pop();
         var best_image = images[best_match.index];
 
+        var img_link = [
+            app.get("base"),
+            _.sample(best_image.img),
+            "?id=",
+            new Date().getTime()
+        ].join("");
+
         if (best_match.score > 0) {
             slack.send({
-                text: app.get("base") + _.sample(best_image.img) + "?id=" + new Date().getTime() + "\n" + req.body.text,
+                text:  encodeURI(img_link) + "\n" + req.body.text,
                 channel: '#' + (req.body.channel_name || "random"),
                 username: 'Sticker',
                 icon_emoji: ':' + _.sample(emoji) + ':',
