@@ -55,6 +55,11 @@ function calcScore(obj, str) {
     return score;
 }
 
+function isURL(str) {
+  var pattern = new RegExp('^https?:\/\/','i');
+  return pattern.test(str);
+}
+
 app.post("/images", function (req, res, next) {
     if (req.body.user_name !== "slackbot" && req.body.text && req.body.text.length > 1) {
 
@@ -69,13 +74,20 @@ app.post("/images", function (req, res, next) {
         // Sort by score and select "best" match
         var best_match = _.sortBy(matches, "score").pop();
         var best_image = images[best_match.index];
+        var random_url = _.sample(best_image.img);
 
-        var img_link = [
-            app.get("base"),
-            _.sample(best_image.img),
-            "?id=",
-            new Date().getTime()
-        ].join("");
+        // Allow external sources
+        if (isURL(random_url)) {
+            var img_link = random_url;
+        }
+        else {
+            var img_link = [
+                app.get("base"),
+                random_url,
+                "?id=",
+                new Date().getTime()
+            ].join("");
+        }
 
         if (best_match.score > 0) {
             slack.send({
