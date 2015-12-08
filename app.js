@@ -72,10 +72,17 @@ app.post("/images", function (req, res, next) {
 
         if (best_match.score > 0) {
             slack.send({
-                text: app.get("base") + _.sample(best_image.img),
+                text: "",
                 channel: '#' + (req.body.channel_name || "random"),
                 username: 'Sticker',
-                icon_emoji: ':' + _.sample(emoji) + ':'
+                icon_emoji: ':' + _.sample(emoji) + ':',
+                attachments: [
+                    {
+                        "fallback": req.body.text,
+                        "title": req.body.text,
+                        "image_url": app.get("base") + _.sample(best_image.img)
+                    }
+                ],
             });
         }
     }
