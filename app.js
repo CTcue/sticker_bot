@@ -94,7 +94,7 @@ app.post("/images", function (req, res, next) {
                 text:  encodeURI(img_link) + "\n" + req.body.text,
                 channel: (req.body.channel_id || "#random"),
                 // channel: '#' + (req.body.channel_name || "random"),
-                username: 'Sticker',
+                username: (req.body.user_name || 'Sticker'),
                 icon_emoji: ':' + _.sample(emoji) + ':',
                 unfurl_links: true,
                 link_names: 1
