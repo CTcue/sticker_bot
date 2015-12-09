@@ -41,6 +41,11 @@
         "img" : ["https://www.youtube.com/watch?v=faJx8ikHJAo"],
         "tags": ["kat", "kat loopt tegen deur", "funny", "glazen deur"]
       },
+      {
+        "subject": false,
+        "img" : ["http://i.imgur.com/zaCeu08.gif"],
+        "tags": ["breadcrumbs", "aww yiss", "mothafukin"]
+      },
 
       {
         "subject" : "mike",
