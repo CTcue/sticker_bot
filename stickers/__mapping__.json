@@ -75,6 +75,12 @@
         "subject": false,
         "img": ["KZquOZM.gif"],
         "tags": ["slecht idee", "goed idee kappa"]
+      },
+
+      {
+        "subject": "git",
+        "img": ["git.png"],
+        "tags": ["git"]
       }
   ]
 }
