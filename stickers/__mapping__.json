@@ -13,6 +13,12 @@
       },
 
       {
+        "subject" : "rundfunk",
+        "img"     : ["kuuuuutt.gif"],
+        "tags"    : ["jij bent kut", "jij bent kuuuuut", "kuuuut", "met een briefje"]
+      },
+
+      {
         "subject" : "lydia",
         "img"     : ["lydia regenboog.jpg"],
         "tags"    : ["regenboog", "handstand", "creatief doen"]
