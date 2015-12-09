@@ -2,6 +2,27 @@
 logs
 *.log
 
+config/secret
+secured
+tmp/
+scripts/
+frontend/core/config.js
+merged.html
+lib-cov
+*.sonar
+*sonar
+*.pyc
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.pyc
+local_*
+.DS_Store
+
 # Runtime data
 pids
 *.pid
