@@ -37,6 +37,12 @@
       },
 
       {
+        "subject" : "nick",
+        "img"     : ["vis_nicker.png"],
+        "tags"    : ["huh", "wat", "winky", ";)", "huuuh", "weeeeeeh"]
+      },
+
+      {
         "subject" : "mike",
         "img"     : ["mike1.png", "mike-1.png"],
         "tags"    : ["oeps", "wat", "verbaasd", "het werkte gister nog"]
