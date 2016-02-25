@@ -25,6 +25,12 @@
       },
 
       {
+        "subject" : "lydia",
+        "img"     : ["lydia_koffie_huilen.jpg"],
+        "tags"    : ["koffie", "geen koffie", "op lydia kan je rekenen"]
+      },
+
+      {
         "subject" : "fabien",
         "img"     : ["grondje_liggen.jpg"],
         "tags"    : ["code stuk", "brak", "niets lukt", "het gaat slecht", "grond liggen"]
@@ -39,7 +45,7 @@
       {
         "subject" : "nick",
         "img"     : ["vis_nicker.png"],
-        "tags"    : ["huh", "wat", "winky", ";)", "huuuh", "weeeeeeh"]
+        "tags"    : ["huh", "wat", "winky", ";)", "huuuh", "weeeeeeh", "ik moet plassen"]
       },
 
       {
