@@ -14,3 +14,7 @@ Stickers have their own directory. For better guessing there is a `__mapping__.j
     "tags"    : ["nice", "thumbs up", "nice work", "good work", "pluim"]  // Tags to match with a query
 }
 ```
+
+To put it online:
+
+`git push heroku master`
