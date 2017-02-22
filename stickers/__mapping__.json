@@ -105,6 +105,24 @@
         "subject": "git",
         "img": ["git.png"],
         "tags": ["git"]
+      },
+
+      {
+        "subject": "por",
+        "img": ["prod/prod1.gif", "prod/prod2.gif", "prod/prod3.gif", "prod/prod4.gif", "prod/prod5.gif", "prod/prod6.gif", "prod/prod7.gif", "prod/prod8.gif", "prod/prod9.gif", "prod/prod10.gif", "prod/prod11.gif", "prod/prod12.gif", "prod/prod13.gif"],
+        "tags": ["por", "prod", "tikkie", "zetje", "zetje in de rug", "vinger"]
+      },
+
+      {
+        "subject": false,
+        "img": ["so-close.gif"],
+        "tags": ["so close", "miss", "try again"]
+      },
+
+      {
+        "subject": false,
+        "img": ["unlucky.gif"],
+        "tags": ["unlucky", "bad luck", "tough luck", "shoot yourself in the foot", "what goes around, comes around", "moeilijk"]
       }
   ]
 }
