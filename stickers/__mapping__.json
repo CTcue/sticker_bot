@@ -13,6 +13,12 @@
       },
 
       {
+        "subject" : false,
+        "img"     : ["Gefixed.png"],
+        "tags"    : ["Gefixed", "Eurotje", "Euro", "Wrong commit"]
+      },
+
+      {
         "subject" : "rundfunk",
         "img"     : ["kuuuuutt.gif"],
         "tags"    : ["jij bent kut", "jij bent kuuuuut", "kuuuut", "met een briefje"]
