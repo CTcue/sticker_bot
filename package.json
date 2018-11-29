@@ -4,19 +4,17 @@
   "description": "Telegram-like sticker packs for slack",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "engines": {
-    "node": "0.12.7"
+    "node": "10.14.1"
   },
-  "author": "Fabiën",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.14.1",
-    "express": "4.13.3",
-    "fast-levenshtein": "^1.0.7",
-    "lodash": "^3.10.1",
+    "body-parser": "^1.18.3",
+    "express": "4.16.4",
+    "fast-levenshtein": "^2.0.6",
+    "lodash": "^4.17.11",
     "node-slack": "0.0.7"
   }
 }
